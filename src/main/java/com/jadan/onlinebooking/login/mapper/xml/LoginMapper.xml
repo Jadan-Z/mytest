@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jadan.onlinebooking.login.mapper.LoginMapper">
+
+    <!-- 匹配学生账号和密码 -->
+    <select id="findStudentPassByAccount" parameterType="java.lang.String" resultType="java.lang.String">
+        select pass from student where account = #{account}
+    </select>
+
+    <!-- 匹配教师账号 -->
+    <select id="findTeacherPassByAccount" parameterType="java.lang.String" resultType="java.lang.String">
+        select pass from teacher where account = #{account}
+    </select>
+
+    <!-- 匹配校长账号 -->
+    <select id="findHeadmasterPassByAccount" parameterType="java.lang.String" resultType="java.lang.String">
+        select pass from headmaster where account = #{account}
+    </select>
+
+
+</mapper>

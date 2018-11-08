@@ -1,0 +1,22 @@
+# Server
+server:
+  port: 8088
+  address: 0.0.0.0
+
+# MYSQL
+spring:
+  datasource:
+    name: onlinebooking
+    url: jdbc:mysql://localhost:3306/onlinebooking?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
+
+# MYBATIS
+mybatis-plus:
+  mapper-locations: classpath*:com/jadan/onlinebooking/**/mapper/xml/*.xml
+  global-config:
+    # 生产环境下禁用
+    refresh: true
+    db-config:
+      id-type: auto
